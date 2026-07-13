@@ -2,11 +2,11 @@ import { Geist, Geist_Mono, Manrope, Inter } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const interHeading = Inter({subsets:['latin'],variable:'--font-heading'});
+const interHeading = Inter({ subsets: ["latin"], variable: "--font-heading" })
 
-const manrope = Manrope({subsets:['latin'],variable:'--font-sans'})
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -22,7 +22,13 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", manrope.variable, interHeading.variable)}
+      className={`${cn(
+        "antialiased",
+        fontMono.variable,
+        "font-sans",
+        manrope.variable,
+        interHeading.variable
+      )} p-[40]`}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
