@@ -11,7 +11,7 @@ export default function Header() {
         <p className="capitalize"> {getCurrentDate()}</p>
       </div>
 
-      <div className="flex flex-row gap-[12]">
+      <div className="flex flex-row items-center gap-[12]">
         <Tabs defaultValue="mois">
           <TabsList>
             <TabsTrigger value="semaine">Semaine</TabsTrigger>
