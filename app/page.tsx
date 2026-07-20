@@ -1,6 +1,10 @@
+import BarBudgets from "@/components/commun/BarBudgets"
 import CardCustom from "@/components/commun/CardCustom"
+import ChardSolde from "@/components/commun/ChardSolde"
 import Header from "@/components/commun/Header"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Card, CardDescription, CardHeader } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
 
 export default function Page() {
   return (
@@ -26,12 +30,31 @@ export default function Page() {
         />
       </section>
 
-      <section>
-        <Card>
-          <CardHeader>Dépenses par catégorie</CardHeader>
-          <CardContent></CardContent>
-        </Card>
-      </section>
+      <ChardSolde />
+      <BarBudgets />
+
+      <Card>
+        <CardHeader className="flex items-center justify-between">
+          <p>Transactions</p>
+          <Input
+            placeholder="Rechercher..."
+            type="search"
+            className="w-[200]"
+          />
+        </CardHeader>
+        <CardDescription className="px-[14]">
+          <div className="flex justify-between">
+            <div>
+              <p>test</p>
+              <p>Autres . 10 juin</p>
+            </div>
+            <div className="flex items-center">
+              <p>-15000€</p>
+              <Button>x</Button>
+            </div>
+          </div>
+        </CardDescription>
+      </Card>
     </>
   )
 }
